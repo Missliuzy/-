@@ -1,0 +1,1339 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<title>vue</title>
+<style type="text/css">span.s1 {background-color: #FFFF00; color: #000000}span.s2 {background-color: #FFFFFF; color: #000000}span.s3 {background-color: #FF9D96; color: #000000}span.s4 {background-color: #FFFFFF; color: #FF0000; font-weight: bold}span.s5 {background-color: #FFFFFF; color: #FF0000}span.s6 {background-color: #00FF00; color: #000000}span.s7 {background-color: #FFFFFF; color: #00FF00}span.s8 {background-color: #FF9D96; color: #FF0000; font-weight: bold}span.s9 {background-color: #00FF00; color: #FF0000}</style>
+</head>
+<body>
+<h1 align="center" class="root">
+<a name="1gfafmaht4ij1jh1r1e1onuig1">vue</a>
+</h1>
+<div align="center" class="globalOverview">
+<img src="vue_files/images/vue.jpg"></div>
+<h2 class="topic">
+<a name="2f33t3vcklco1foc4sgntvghbq">01day</a>
+</h2>
+<h3 class="topic">
+<a name="1jbujjda71oqrj39bd55bum977">vue是前端js框架；三大主流框架react，angular，vue</a>
+</h3>
+<h3 class="topic">
+<a name="5jfpbattkb66n19fvq6fi50mdq">库和框架的区别：  库是工具(小，一个项目可以调用多个)，提供大量API，需要自己调用；框架需要按照它的某种规范进行开发（一个项目只能用一个）</a>
+</h3>
+<h3 class="topic">
+<a name="7fflmoqfbbuhger5hdj4k4npqi">为什么学习vue ： 传统需求无法解决项目的业务逻辑，企业需求，</a>
+</h3>
+<h3 class="topic">
+<a name="4v4j3lg4cfe5bcpnuldus33mq9">vue能做什么：减少dom操作，适用于单页web项目spa项目的开发，</a>
+</h3>
+<h3 class="topic">
+<a name="6df1usoi7868mmiu4duuoq99vh">核心特性	</a>
+</h3>
+<h3 class="topic">
+<a name="2brsmeqhk228r36qc5ojst1ols">双向数据绑定</a>
+</h3>
+<h3 class="topic">
+<a name="0emi6jvt2drc9p4u26ghi1pg68">借鉴了react的虚拟dom,借鉴了angular双向数据绑定</a>
+</h3>
+<h3 class="topic">
+<a name="10q6scf8ufknuv634ih4q60nhp">通过指令拓展了HTML，通过表达式绑定数据到HTML</a>
+</h3>
+<h3 class="topic">
+<a name="6r22sggaa7mtl27756m7hseo6d">解耦视图和数据</a>
+</h3>
+<h3 class="topic">
+<a name="2j7tr8ik5md3ne0esb64flgs6b">可复用组件</a>
+</h3>
+<h3 class="topic">
+<a name="0k5vck6sb91khqq9pbt0am5879">M-V-VM</a>
+</h3>
+<h3 class="topic">
+<a name="0dsn7q8mv64q4ecjq3inomd42t">数据驱动视图</a>
+</h3>
+<h3 class="topic">
+<a name="6a1va14u35lqa16hlhhaiivino">vue实例选项：el</a>
+</h3>
+<p class="relationships">参见: <a href="#6o20ebd9s8acfg23qmdru13apl">   在new Vue({ 都为实例选项   同级显示 })</a>
+</p>
+<h3 class="topic">
+<a name="797k2mochp3b0806mkcrl1p0p7">指定/设置当前vue实例所管理的视图</a>
+</h3>
+<h3 class="topic">
+<a name="66gs5mh4m78tf0pvt4922f7kpk">el不能直接管理html和body  报错  （mount 挂载）</a>
+</h3>
+<h3 class="topic">
+<a name="3ok070oanqr0ok3gpmub4qhqhu">可以是   document.getElementById('id')</a>
+</h3>
+<h3 class="topic">
+<a name="01g9c66da83o4aavd805hv7rbb">管理选择器指定多个标签时，只生效第一个</a>
+</h3>
+<h3 class="topic">
+<a name="6053te9v5uihjkvtk8thaa90mt">vue实例选项：data</a>
+</h3>
+<p class="relationships">参见: <a href="#6o20ebd9s8acfg23qmdru13apl">   在new Vue({ 都为实例选项   同级显示 })</a>
+</p>
+<h3 class="topic">
+<a name="5pe85gggmg5fuu4oipbjaf0m51">vue实例的数据对象。是响应式数据（数据驱动视图）</a>
+</h3>
+<h3 class="topic">
+<a name="13aso2f81m1ga8dvtrgv2dc7hh">data对象中的数据不分前后顺序</a>
+</h3>
+<h3 class="topic">
+<a name="6f4gka7vp1pu7sl2clqqba75c3">data中对象中的数据可以直接  .键值取出数据，，，，也可以.$data.键值取出数据</a>
+</h3>
+<h3 class="topic">
+<a name="445l1qn2d67uq0jp6s3k0dpnu9">vue实例选项：methods	</a>
+</h3>
+<p class="relationships">参见: <a href="#6o20ebd9s8acfg23qmdru13apl">   在new Vue({ 都为实例选项   同级显示 })</a>
+</p>
+<h3 class="topic">
+<a name="3399dsg56s7ohefmvichlg5942">可以是一个对象</a>
+</h3>
+<h3 class="topic">
+<a name="0nm9i10f6aq5ua63f8iupdiusl">可以直接通过实例访问这些方法，或在指令表达式中使用</a>
+</h3>
+<h3 class="topic">
+<a name="2afpskvj3irvdqsa7ddck91jg4">方法中的this为vue的实例对象</a>
+</h3>
+<h3 class="topic">
+<a name="2qig9u8ocur8qo2qdap7fhdt7j">箭头函数不能定义methods函数。箭头函数的this不会指向vue的实例对象</a>
+</h3>
+<h3 class="topic">
+<a name="00758hbi7uqmv2ifp14hasgtu1">可以写 methods: {&#13;
+                fn5(){&#13;
+                    console.log(this.msg);&#13;
+                }&#13;
+            }&#13;
+</a>
+</h3>
+<h3 class="topic">
+<a name="3glg3t1on6taff39m3jkgoa8js">插值表达式</a>
+</h3>
+<h3 class="topic">
+<a name="25cl5q6hi2laooak0kskbcmp62">会绑定实时出来的数据</a>
+</h3>
+<h3 class="topic">
+<a name="4o3rkpqi4ferlefdep6ti2gvg7">{{中可以写js表达式，三元运算符（三目运算符），方法调用}}</a>
+</h3>
+<h3 class="topic">
+<a name="6cqohe8bidku8mb69lk16p6i1f">{{不可以写var a = 10; 分支语句以及循环语句}}</a>
+</h3>
+<h3 class="topic">
+<a name="49qeugjts4hdm69srpb6fvc0qe">指令---拓展了HTML的能力。减少了dom的操作</a>
+</h3>
+<h3 class="topic">
+<a name="4hd2c56c3s7a2tgvracnrdnt2g">更新标签内容   v-text</a>
+</h3>
+<h3 class="topic">
+<a name="2kbidf5u9l3khu4574lv77rqde">更新标签中的内容（同innertext）  语法：  v-text="msg"</a>
+</h3>
+<h3 class="topic">
+<a name="14bhflasif8o8v6ogp5hnpvj8f">v-text和插值表达式的区别：- v-text  更新整个标签中的内容（有插值表达式也会更新）：- 插值表达式: 更新标签中局部的内容</a>
+</h3>
+<h3 class="topic">
+<a name="5tql5l1b3t8dktqkajjdvul9nh">与innerHTML相同 v-html	</a>
+</h3>
+<h3 class="topic">
+<a name="5q60v600re4pmbg1p45ame1ej9">更新标签中的内容/标签  ===（同innerHTML）&#13;
+&#13;
+- 可以渲染内容中的HTML标签&#13;
+- 注意:尽量避免使用，容易造成危险 (XSS跨站脚本攻击)&#13;
+ 语法：v-html="str"</a>
+</h3>
+<h3 class="topic">
+<a name="0mian80mgr0jvvd6buo8vp1vbt">绑定时间指令v-on指令   </a>
+</h3>
+<h3 class="topic">
+<a name="5int3b7998h3v2l6pavomu52qq">  			作用: 绑定事件&#13;
+            语法:   v-on:事件名="methods中的方法"&#13;
+简写@click="方法"  &lt;!-- $event代表当前的事件对象 --&gt;&#13;
+        &lt;button @click="fn6($event)"&gt;按钮6&lt;/button&gt;&#13;
+        &lt;!-- @事件名.修饰符="methods中的方法"  once和prevent （取消默认事件）--&gt;&#13;
+        &lt;button @click.once="fn2()"&gt;按钮7&lt;/button&gt;--只执行一次&#13;
+</a>
+</h3>
+<h3 class="topic">
+<a name="4b88fs9fgpqqvcpes6qovvnqqa">添加渲染  v-if</a>
+</h3>
+<h3 class="topic">
+<a name="0a9tnofdeijcutajah2elqqj78">条件渲染；作用: 根据布尔值去渲染标签&#13;
+        当为true 就在页面中插入该元素      语法：v-if="isShow"&#13;
+        为false 从页面移除该元素-----------页面中会彻底消失频繁使用会影响内存使用</a>
+</h3>
+<h3 class="topic">
+<a name="1j2dr48rharqf6hma0gcrqn7q7">当标签显示与隐藏频繁切换用v-show  反之用v-if</a>
+</h3>
+<p class="summary">(<a href="#0a9tnofdeijcutajah2elqqj78">条件渲染；作用: 根据布尔值去渲染标签&#13;
+        当为true 就在页面中插入该元素      语法：v-if="isShow"&#13;
+        为false 从页面移除该元素-----------页面中会彻底消失频繁使用会影响内存使用</a>)</p>
+<h3 class="topic">
+<a name="4bu0hpc1evqggvhf4i7qo5k0c9">添加渲染 v-show</a>
+</h3>
+<h3 class="topic">
+<a name="0ao195kd6flaf1gbd4j8ih3ec0">条件渲染；作用: 根据布尔值去渲染标签&#13;
+        当为true display:block&#13;
+        为false display:none</a>
+</h3>
+<h3 class="topic">
+<a name="06jm42bi6sh9bohb6gbgobl0oq">页面中会存在此标签  只是display设置为none</a>
+</h3>
+<p class="summary">(<a href="#0ao195kd6flaf1gbd4j8ih3ec0">条件渲染；作用: 根据布尔值去渲染标签&#13;
+        当为true display:block&#13;
+        为false display:none</a>)</p>
+<h3 class="topic">
+<a name="2p4ue0lecb0ggdb3k1b00q3gn2">循环列表渲染 v-for</a>
+</h3>
+<h3 class="topic">
+<a name="3ek23434ablmdclm0hbsh6d623">列表渲染：  数组&#13;
+          语法 :  v-for="item in 数组"&#13;
+          写法1 item指的是数组中每个元素的值&#13;
+          item in 数组&#13;
+          写法2 (item,index) item指的是数组中每个元素的值 index指每个元素的下标&#13;
+          (item,index) in 数组&#13;
+          注意: item和index 可以随便命名 通常是 (value,index) in 数组</a>
+</h3>
+<h3 class="topic">
+<a name="5t04o7orakt4cr3n92bf9i89nn">v-for="item in data中的对象"&#13;
+&#13;
+        写法1:  item指key-value中的value值&#13;
+        item in 对象&#13;
+        写法2: (v,k) v指的是value值  k指的是key名&#13;
+        (v,k) in 对象&#13;
+        写法3: (v,k,i) v指的是value值  k指的是key名 i指的是每队键值对的索引&#13;
+        (v,k,i) in 对象&#13;
+            养成好习惯:建议在写v-for时 设置:key="唯一值"  ------其中:key="index"不会在网页中显示  vue在遍历渲染时会快速的根据key标识锁定标签  效率更好&#13;
+            &lt;li v-for="(item,index) in list" :key="index"&gt;{{item}}---{{index}}&lt;/li&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="1ifj1hhhvkmo7qao1g09f40g21">绑定标签属性设置属性 v-bind</a>
+</h3>
+<h3 class="topic">
+<a name="3qjulbde1v8mm5b8pm1oc1igh1">作用绑定标签上的任何属性。当标签的属性值 是不确定的 是可以修改&#13;
+        语法: v-bind:要绑定的属性名="data中的数据"&#13;
+        简写:  去掉v-bind    </a>
+</h3>
+<h3 class="topic">
+<a name="1mm9vqs9i6jevju3d13elvi186">绑定对象：&#13;
+&lt;p :class="{active:a,left:b}"&gt;  &#13;
+        &lt;p :class="obj"&gt;</a>
+</h3>
+<div class="notesContainer">
+<p>data: {</p>
+<p>                obj: {</p>
+<p>                    a: true,</p>
+<p>                    b: true</p>
+<p>                },</p>
+<p>                a: true,</p>
+<p>                b: false</p>
+<p>            },</p>
+<p></p>
+</div>
+<h3 class="topic">
+<a name="6c68bsmdnsegc2sn3dalaf5u99">绑定数组：&#13;
+       &lt;p :class="[left,active]"&gt;&#13;
+       &lt;p :class="[aObj,bObj]"&gt;</a>
+</h3>
+<div class="notesContainer">
+<p>data: {</p>
+<p>            aObj:{</p>
+<p>                container:true</p>
+<p>            },</p>
+<p>            bObj:{</p>
+<p>                foot:true</p>
+<p>            },</p>
+<p>           left:'a',</p>
+<p>           active:'b'</p>
+<p>        },</p>
+</div>
+<h3 class="topic">
+<a name="0plcftr8secbrdtj5qcjon12i2">绑定style对象&#13;
+   &lt;p :style="{color:c,fontSize:f}"&gt; </a>
+</h3>
+<div class="notesContainer">
+<p></p>
+<p>         data: {</p>
+<p>            a:{</p>
+<p>                color:'red'</p>
+<p>            },</p>
+<p>            b:{</p>
+<p>                fontSize:'30px'</p>
+<p>            }</p>
+<p>         },</p>
+</div>
+<h3 class="topic">
+<a name="49v85mh73de3j9o6eqnjkeb7el">绑定style数组&#13;
+        &lt;p :style="[a,b]"&gt;</a>
+</h3>
+<div class="notesContainer">
+<p></p>
+<p>         data: {</p>
+<p>            a:{</p>
+<p>                color:'red'</p>
+<p>            },</p>
+<p>            b:{</p>
+<p>                fontSize:'30px'</p>
+<p>            
+</p>
+</div>
+<h3 class="topic">
+<a name="0br9nan44ibpgkpna22o0m8pm1">表单双向数据绑定v-model</a>
+</h3>
+<h3 class="topic">
+<a name="2kputa46rupb2t3spcjvuq3vbm">表单元素的绑定  特点：双向绑定---v-model绑定表单元素的value值  把data中的msg的值和value值进行关联&#13;
+</a>
+</h3>
+<h3 class="topic">
+<a name="4t0djnb3tehe3fc4kl7o3167f8">v-model&nbsp;会忽略所有表单元素的&nbsp;value、checked、selected&nbsp;特性的初始值而总是将 Vue 实例的数据作为数据来源。应该在&nbsp;data选项中声明初始值。 &#13;
+       1. 多行输入框&#13;
+        textarea内容区域的字符是无效的&#13;
+        2.1 一个复选框 v-model="bool型"&#13;
+        2.2 多个复选框 v-model="[]"&#13;
+        数组中保存的值是选中的复选框中的value值&#13;
+        3 单选框 v-model="bool型"  {{}}打印页面上值为value值  &#13;
+        4.下拉框&#13;
+     1. select的值来源于被选中的option的value值&#13;
+     2. 显示默认option 默认option的value和select初始值一致</a>
+</h3>
+<h3 class="topic">
+<a name="5olqbl062v34vn0di0et043igk">解决{{}}页面闪烁的问题  v-cloak</a>
+</h3>
+<h3 class="topic">
+<a name="5ke07r4e18fh19m8i25c4n7gte">1. 给最外层div设置v-cloak(不需要赋值)&#13;
+        2. 在style样式中 &#13;
+       [v-cloak]{&#13;
+           display: none;&#13;
+       }&#13;
+  语法 --&lt;div id='app' v-cloak&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="2s4hvcf9pee52bfp9p8jvjd724">只执行一次  v-once   语法 就是v-once 双向绑定修改表单值不会改变</a>
+</h3>
+<h2 class="topic">
+<a name="2vj2dhblih95di03esq5t0v87s">webpack   ---安装</a>
+</h2>
+<p class="labelsAndMarkers">
+<span class="label">SPA单页面适合   用webpack</span>
+</p>
+<div class="notesContainer">
+<p>1. 运行npm init -y 快速初始化项目</p>
+<p>2. 在项目根目录创建src源代码目录和dist产品目录</p>
+<p>3. 在 src 目录下创建 index.html ， index.js </p>
+<p></p>
+<p>// 1. 运行 cnpm i webpack webpack-cli -D</p>
+<p>// 2. 打开 package.json 配置文件，找到 scripts 节点；这个脚本节点中，存放的都是 npm 的脚本；</p>
+<p>// 3. 在 scripts 节点下，新增 名字是 dev 脚本，dev脚本对应的指令为 webpack;</p>
+<p>// 4. 新建的 dev 脚本，可以直接通过  npm run dev 执行；</p>
+<p>当运行npm run dev 时，会将js，转化为dist下的main,js，，这时会有警告错误，需要</p>
+<p></p>
+<p></p>
+<p></p>
+<p>// 注意： webpack 4.x 的版本；默认约定： 会把 src -&gt; index.js 进行代码转换；</p>
+<p>//       并把 转换好的 代码，输出到 dist -&gt; main.js 的文件中；</p>
+<p></p>
+<p>// 注意：webpack 在运行的时候，需要程序员提供一个 配置文件；这个配置文件叫做 webpack.config.js</p>
+<p>//       这个 webpack.config.js 配置文件，要放到 项目的根目录下；</p>
+</div>
+<h3 class="topic">
+<a name="3qeiseiiaes5ffsl9e9vhp9hms">webpack 是前端项目的构建工具；前端的项目，都是基于 webpack 进行 构建和运行的；/ &#13;
+注意： webpack 这个 前端的构建工具，是基于 node.js 开发出来的；&#13;
+// 所以，webpack.config.js 配置文件中，支持 Node.js 语法</a>
+</h3>
+<div class="notesContainer">
+<p>
+<span class="s1">// 在 之前所学的技术中，能够在 一个 JS 文件中，引入另一个JS文件吗？</span>
+</p>
+<p>
+<span class="s1">// const myjs = require('./myjs.js')</span>
+</p>
+<p>
+<span class="s2">                                                                                    ----------------在index.js中导入其他模块</span>
+</p>
+<p>
+<span class="s1">// ES6 中导入 模块的语法</span>
+</p>
+<p>
+<span class="s1">// 由于 浏览器中，暂时不支持 最新的 ES6 import 语法；所以报错；</span>
+</p>
+<p>
+<span class="s1">import $ from 'jquery'</span>
+</p>
+<p>
+<span class="s1">// const $ = require('jquery')</span>
+</p>
+<p>
+<span class="s1"></span>
+</p>
+<p>// 向外暴露一个配置对象</p>
+<p>// 这个配置对象的作用：每当大家运行 npm run dev 的时候，都会执行 webpack 命令；</p>
+<p>// 当 webpack 工具在转换代码之前，会先读取项目根目录中，webpack.config.js 中导出的配置对象；</p>
+<p>// 然后，根据配置对象指定的相关配置，进行代码的转换；</p>
+<p>module.exports = {</p>
+<p>  // 在开发阶段，指定为 development 模式就行；这样能够提高编译速度；</p>
+<p>  mode: 'development' // mode 表示代码转换的模式  只能从  development  和  production  中进行取值</p>
+<p>}     <span class="s3"> 在webpack.config.js中设置</span>
+</p>
+</div>
+<h3 class="topic">
+<a name="2uiklqmaqm0v7rtd6dmbm90d55">为什么用webpack -----webpack优点&#13;
+/1. 如果项目使用 webpack 进行构建，我们可以书写高级的ES代码，且不用考虑兼容性；&#13;
+2. webpack 能够优化项目的性能；&#13;
+3. 基于webpack，程序员可以把 自己的开发重心，放到功能上；&#13;
+</a>
+</h3>
+<h3 class="topic">
+<a name="5gvurk9vmaqvj2fqtqpsm25ag7">webpack-dev-server</a>
+</h3>
+<h3 class="topic">
+<a name="763fofq6kui551tomvka8lgqn0">// 关于 webpack-dev-server 的使用步骤：&#13;
+// 1. 运行 cnpm i webpack-dev-server -D&#13;
+// 2. 打开 package.json 配置文件，找到 scripts 节点； 把 dev 脚本从 webpack 修改为 webpack-dev-server&#13;
+// 3. 注意：使用 webpack-dev-server 可以实现实时打包；但是，打包的 main.js 并没有像之前那样&#13;
+//    存放到了 实际物理磁盘上的 dist -&gt; mian.js； 而是存放到了内存中；我们可以直接 访问项目的&#13;
+//    根目录，来得到这个  main.js  文件；</a>
+</h3>
+<h3 class="topic">
+<a name="7d8ml91aorrpcsu0bc6c7uu17a">// 关于 把 src 目录下的 index.html 托管到内存中的，放到 项目根目录下进行内存的托管：&#13;
+// 1. 运行 cnpm i html-webpack-plugin -D&#13;
+// 2. 打开 webpack.config.js 配置文件，导入刚才安装的 html-webpack-plugin 插件；</a>
+</h3>
+<div class="notesContainer">
+<p>const HtmlPlugin = require('html-webpack-plugin')</p>
+<p>const htmlplugin = new HtmlPlugin({</p>
+<p>  template: './src/index.html', // 指定 要把 哪个 HTML 文件托管到内存中</p>
+<p>  filename: 'index.html' // 指定内存中生成的HTML叫什么名字</p>
+<p>})</p>
+<p></p>
+<p>// 向外暴露一个配置对象</p>
+<p>// 这个配置对象的作用：每当大家运行 npm run dev 的时候，都会执行 webpack 命令；</p>
+<p>// 当 webpack 工具在转换代码之前，会先读取项目根目录中，webpack.config.js 中导出的配置对象；</p>
+<p>// 然后，根据配置对象指定的相关配置，进行代码的转换；</p>
+<p>module.exports = {</p>
+<p>  // 在开发阶段，指定为 development 模式就行；这样能够提高编译速度；</p>
+<p>  mode: 'development', // mode 表示代码转换的模式  只能从  development  和  production  中进行取值</p>
+<p>  plugins: [htmlplugin] // 所有的插件，必须放到 plugins 节点中才能生效</p>
+</div>
+<h3 class="topic">
+<a name="033nd38s7uqlq9uo9m8g1nqgnt">webpack.config.js 中一般字母末尾带s都是数组</a>
+</h3>
+<h3 class="topic">
+<a name="3bgft7rlrqin07eoddkh3kgt61">// 注意：在 webpack 构建的项目中，一切皆模块&#13;
+// 默认情况下，webpack 只能打包处理 .js 结尾的文件；非 .js 结尾的文件，webpack 默认处理不了；&#13;
+// 这时候，如果需要处理 .css 的文件，需要安装合适的 第三方 loader 加载器；&#13;
+// 让 第三方 loader 帮 webpack 处理 .css 文件；&#13;
+// webpack 只负责打包 第三方loader 处理的结果；</a>
+</h3>
+<div class="notesContainer">
+<p>
+<span class="s4">配置css文件</span>
+</p>
+<p>
+<span class="s3"> cnpm i style-loader css-loader -D</span>
+</p>
+<p>
+<span class="s3">打开 webpack.config.js 配置文件，在 module -&gt; rules 数组中，新增处理 css 样式表的loader规则：</span>
+</p>
+<p>module: { // 所有 非.js 结尾的第三方文件类型，都可以在 module 节点中进行配置</p>
+<p>    rules: [ // rules 是匹配规则，如果 webpack 在打包项目的时候，发现，某些 文件的后缀名是 非 .js 结尾的</p>
+<p>      //  webpack 默认处理不了，此时，webpack 查找 配置文件中的 module -&gt; rules 规则数组；</p>
+<p>      // 第三方 loader 的调用顺序是 从后往前；</p>
+<p>      { test: /\.css$/, use: ['style-loader', 'css-loader'] },</p>
+<p>
+<span class="s4">配置less文件</span>
+</p>
+<p>
+<span class="s3">1. 运行 cnpm i less-loader less -D</span>
+</p>
+<p>
+<span class="s3">2. 在 webpack 的配置文件中，新增一个 rules 规则来 处理 less 文件：</span>
+</p>
+<p>{ test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] }</p>
+<p>
+<span class="s4">配置sass文件</span>
+</p>
+<p>
+<span class="s3">运行 cnpm i url-loader file-loader -D</span>
+</p>
+<p>
+<span class="s3">{ test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] }</span>
+</p>
+<p>
+<span class="s4">css中的路径</span>
+</p>
+<p>
+<span class="s4"></span>
+</p>
+<p>
+<span class="s3">1. 运行 cnpm i url-loader file-loader -D</span>
+</p>
+<p>
+<span class="s3">{ test: /\.jpg|png|gif|bmp$/, use: 'url-loader' }使用babel处理高级JS语法</span>
+</p>
+<p>
+<span class="s3"></span>
+</p>
+<p>
+<span class="s3">1.</span><span class="s4"> 之前说过，webpack 默认能够打包处理一些ES6中的高级语法；但是，webpack 并不能处理所有的高级ES6、ES7语法；</span>
+</p>
+<p>
+<span class="s5">2. 运行两套命令，去安装相关的 loader:</span>
+</p>
+<p>
+<span class="s5">   - 运行 cnpm i babel-core babel-loader babel-plugin-transform-ru</span><span class="s3">ntime -D</span>
+</p>
+<p>
+<span class="s3">   - 运行 cnpm i babel-preset-env babel-preset-stage-0 -D</span>
+</p>
+<p>
+<span class="s3">3. 添加 babel-loader 配置项：</span>
+</p>
+<p>
+<span class="s2">       // 注意：在配置 babel-loader 的时候，一定要添加 exclude </span><span class="s4">排除项</span><span class="s2">，把 node_modules 目录排除</span>
+</p>
+<p>
+<span class="s2">       // 这样，只让 babel-loader 转换 程序员 自己手写的 JS 代码；</span>
+</p>
+<p>
+<span class="s2">       // 好处：1. 能够提高编译的转换效率； 2. 能够防止不必要的报错！</span>
+</p>
+<p>
+<span class="s3">       { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }</span>
+</p>
+<p>
+<span class="s3">4. 在项目根目录中，添加 .babelrc 配置文件：</span>
+</p>
+<p>
+<span class="s3">       {</span>
+</p>
+<p>
+<span class="s3">         "presets": ["env", "stage-0"],</span>
+</p>
+<p>
+<span class="s3">         "plugins": ["transform-runtime"]</span>
+</p>
+<p>
+<span class="s3">       }</span>
+</p>
+<p>
+<span class="s3"></span>
+</p>
+<p>
+<span class="s3"></span>
+</p>
+<p></p>
+</div>
+<h3 class="topic">
+<a name="14v3jhahp97i1htajrftj60kid">webpack不适合全局安装，项目不同wp版本不同。 webpack可以使项目模块化 ，代码多，会有很多js文件 ，要注意顺序，文件有依赖关系 ，   </a>
+</h3>
+<h3 class="topic">
+<a name="5s6j5lrjbktfpndego4u56hn7q">全局变量有污染，：1 函数自调 2 闭包让j变量变成块级作用域</a>
+</h3>
+<h3 class="topic">
+<a name="0u0s1clc9kd9kl92uhuenqbgsu"> // 配置webpack-dev-server&#13;
+    // 指定测试的服务器的根目录&#13;
+    devServer: {&#13;
+        contentBase: './dist'&#13;
+    },</a>
+</h3>
+<h2 class="topic">
+<a name="2a6nemfu133m6bk8mq63js8mhl">04day</a>
+</h2>
+<h3 class="topic">
+<a name="67j992hd1v1pt7ko2k6bjeinns">router  配置路由  vue-router是vue核心插件</a>
+</h3>
+<h3 class="topic">
+<a name="5r2t2i0r4v0i4fudfnlf1v8u2c">1. 设置链接 &#13;
+        &lt;router-link to="/a"&gt;首页&lt;/router-link&gt;&#13;
+2. 设置容器 &#13;
+        &lt;router-view&gt;&lt;/router-view&gt;&#13;
+3. 提供要渲染的组件&#13;
+        var comA = {&#13;
+            template: `&lt;div&gt;comA组件&lt;/div&gt;`&#13;
+        }&#13;
+4  实例化路由&#13;
+        var router = new VueRouter({&#13;
+            // 路由选项&#13;
+            // routes:[{路由配置}]&#13;
+            routes: [{&#13;
+                path: '/aaa',&#13;
+                component: comA&#13;
+            }]     })&#13;
+        &#13;
+5.挂载使用路由&#13;
+        new Vue({&#13;
+            el: '#app',&#13;
+            // vue选项-&gt;router&#13;
+            // router:router&#13;
+            router&#13;
+        })</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">第五步挂载路由也是与Vue实例选项中的el，data 同级显示</span>
+</p>
+<h3 class="topic">
+<a name="7octdr4vlbj5okrihk2ugnkabg">// 1. 与模块系统一起使用时，必须通过Vue.use()以下方式显式安装路由器：&#13;
+import Vue from 'vue'&#13;
+import VueRouter from 'vue-router'&#13;
+Vue.use(VueRouter)</a>
+</h3>
+<h3 class="topic">
+<a name="4qa50arnccsiibu63nmtlp7l53">&#13;
+// 2. 导入要渲染的组件&#13;
+import List from '@/components/list/list.vue'&#13;
+import Bar from '@/components/bar/bar.vue'&#13;
+// 3. 路由配置&#13;
+var routes = [{&#13;
+    name: 'heroes',&#13;
+    path: '/heroes',&#13;
+    component:List&#13;
+  },&#13;
+  {&#13;
+    name: 'bar',&#13;
+    path: '/bar',&#13;
+    component:Bar&#13;
+  },&#13;
+  {&#13;
+    name: 'foo',&#13;
+    path: '/foo',&#13;
+    component:Foo&#13;
+  },&#13;
+&#13;
+]&#13;
+// 4. 实例化路由&#13;
+var router = new VueRouter({&#13;
+  // 全局设置激活routerlink的类名&#13;
+    linkExactActiveClass:'active',&#13;
+    routes&#13;
+})&#13;
+&#13;
+// 5. 导出模块&#13;
+export default router&#13;
+// 6.挂载要到其他页面  main.js 中的  new Vue中   ------注意：先导入</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">linkExactActiveClass:' 类名 ' ---全局设置激活routerlink 的类名  linkActiveClass取消默认高亮显示</span>
+</p>
+<h3 class="topic">
+<a name="4e6cpkcdt6ogcgeos43r05pfqr">动态路由</a>
+</h3>
+<h3 class="topic">
+<a name="56ihq7el80ojhgjb0eufhck68f">在配置路由步骤中 动态路由&#13;
+  :id参数名 其值是变化的---可以任意写&#13;
+            {&#13;
+                path: '/ball/:id',&#13;
+                component: Ball&#13;
+            }</a>
+</h3>
+<h3 class="topic">
+<a name="45s39uuht7cppl6sq2703hkilp"> var Ball = {&#13;
+            template: `&lt;div&gt;球组件组件 {{$route.params.id}}&lt;/div&gt;`&#13;
+        }</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">其中{{$route.params.id}}插值表达式的数据可以用来渲染到页面，并不使用data中的数据</span>
+</p>
+<h3 class="topic">
+<a name="74e7np9caj8ff2iv3p83pqgvuf">$route,和$router使Vue-router插件实例后添加给Vue的方法 &#13;
+在视图中获取id值   {{$route.params.id}}&#13;
+</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">- this.$route  是 路由参数对象 this.$router 是路由导航对象</span>
+</p>
+<h3 class="topic">
+<a name="0ifsl5dg5br6a9b4gnp3nguv9d">路由传参 开启props</a>
+</h3>
+<div class="notesContainer">
+<p>1. 路由传参，首先，要把路由规则中，对应的参数位置，通过 : 来定义为一个参数；</p>
+<p>2. 可以在组件中，直接使用this.$route.params 来获取参数；【写起来太麻烦，不推荐】</p>
+<p>3. 也可以开启路由的 props 传参，来接收路由中的参数；【推荐方式】</p>
+<p>   1. 在需要传参的路由规则中，添加 props: true</p>
+<p>          { path: '/movie/:type/:id', component: movie, props: true }</p>
+<p>   2. 在 对应的组件中，定义 props 并接收路由参数</p>
+<p>          const movie = {</p>
+<p>                template: '&lt;h3&gt;电影组件 --- {{type}} --- {{id}}&lt;/h3&gt;', // 使用参数</p>
+<p>                props: ['type', 'id'] // 接收参数</p>
+<p>              }</p>
+<p></p>
+<p></p>
+</div>
+<h3 class="topic">
+<a name="0lieigqa63ri8m4ed27l0pp9c9">路由中&lt;router-link  to=""&gt;&lt;/router-link&gt;中  to属性多种方法</a>
+</h3>
+<h3 class="topic">
+<a name="64ihlaa4e3h9qgot7p3hocuhbj">1. to值可以是固定的字符串&#13;
+2. to值可以是data中的数据   :to="data中的数据"      -----常用&#13;
+3. to的值可以是{path:"标识"}  :to="{path:"标识"}"     -----常用&#13;
+4. to的值可以是{name:"路由配置的名字"}  :to="{name:"路由配置的名字"}"&#13;
+</a>
+</h3>
+<h3 class="topic">
+<a name="7rosv5pa8kbv4ier97jddcap78">// 如果用户输错误的标识           渲染首页comA&#13;
+            {&#13;
+                path:'*',&#13;
+                // css base.css 重置层 reset.css&#13;
+                component:comA</a>
+</h3>
+<h3 class="topic">
+<a name="49tp1d30qr1lfkjqsfe0ubrdei">编程式导航</a>
+</h3>
+<h3 class="topic">
+<a name="1vtov4fegv6ns7b1nu1ttdvvbh">使用JS代码来改变路由------不使用&lt;router-link  to=""&gt;&lt;/router-link&gt;&#13;
+                    // 改变url标识&#13;
+                    this.$router.push({name:'cccc'})</a>
+</h3>
+<h3 class="topic">
+<a name="59nokkd9t5npk9715idcav0mac">- this.$router.push('路径的地址')&#13;
+- this.$router.go(n)&#13;
+- this.$router.forward()&#13;
+- this.$router.back()&#13;
+</a>
+</h3>
+<h3 class="topic">
+<a name="6gf4088tkq4vm6j4veul1c94rd">重定向    redirect  写在配置路由中</a>
+</h3>
+<h3 class="topic">
+<a name="03beiuhgpa3q60gj3q75vgq6kk"> redirect重定向 强制修改url标识&#13;
+            // {path:'/',redirect:{&#13;
+            //     path:'/a'&#13;
+            // }},</a>
+</h3>
+<h3 class="topic">
+<a name="45dm04qhlb2qe5v7cibr4vlnc2">redriect:  重定项 ----</a>
+</h3>
+<div class="notesContainer">
+<p>// <span class="s6">使用 children 属性，为about路由规则，添加子路由规则</span>
+</p>
+<p>
+<span class="s6">    {</span>
+</p>
+<p>      path: '/about',</p>
+<p>      component: About,</p>
+<p>      redirect: '/about/tab1',--------<span class="s3">-进入about后默认进入about/tab1</span>
+</p>
+<p>     
+<span class="s6"> children: [</span>
+</p>
+<p>        /<span class="s3">/ 路由重定向</span>
+</p>
+<p>
+<span class="s3">        // { path: '/about', redirect: '/about/tab1' },</span>
+</p>
+<p>        { path: '/about/tab1', component: Tab1 },</p>
+<p>        { path: '/about/tab2', component: Tab2 }</p>
+<p>      ]</p>
+<p>    }</p>
+</div>
+<h3 class="topic">
+<a name="3e3jdd0mtuts7i9145sdph4igf">router.beforeEach 路由守卫</a>
+</h3>
+<h3 class="topic">
+<a name="44kf40svviga1r3kas6fuose81">router.beforeEach((to, from, next) =&gt; {&#13;
+  console.log('触发了路由导航守卫')&#13;
+&#13;
+  // 1. 获取到 sessionStorage 中的 token&#13;
+  // 2. 如果 token 存在，则放行；如果不存在，则 强制跳转到登录页&#13;
+&#13;
+  const token = sessionStorage.getItem('token')&#13;
+  // 1. 如果访问的是登录页，则直接放行；&#13;
+  // 2. 如果访问的不是登录页，则 判断是否有token&#13;
+  // 3. 如果有 token，直接放行&#13;
+  // 4. 如果没有 token， 则强制跳转到 登录页&#13;
+&#13;
+  if (to.path === '/login') return next()&#13;
+  if (token) return next()&#13;
+  next('/login')&#13;
+})</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">token 验证用户登录</span>
+</p>
+<h2 class="topic">
+<a name="7feotoar9ho7du0vr9t1kl4oms">03day </a>
+</h2>
+<h3 class="topic">
+<a name="2noos42l3bpfctrkmfi3gu0r1g">brands?name_like=关键字                模糊搜索</a>
+</h3>
+<h3 class="topic">
+<a name="1kejt36leadqv6phqnm7v36biv">侦听器  watch</a>
+</h3>
+<p class="relationships">参见: <a href="#6o20ebd9s8acfg23qmdru13apl">   在new Vue({ 都为实例选项   同级显示 }) (都是实例选项)</a>
+</p>
+<h3 class="topic">
+<a name="1qea4kupcivcgi3g4cpieb9o3p">watch: {&#13;
+                // 被监测的数据名:函数(){}&#13;
+                // 当被监测的属性msg变化时 会触发方法&#13;
+                msg(newVal, oldVal) {&#13;
+        // 判断新值的长度是否大于6，如果大于，则强制把 uname 修改为 oldVal&#13;
+                    if(newVal.length &gt; 6){&#13;
+         				 this.uname = oldVal&#13;
+      				  }&#13;
+                }&#13;
+            },</a>
+</h3>
+<h3 class="topic">
+<a name="3i9bkhpjq4iobjfffg5g47bg71">// 计算属性，侧重于得到最后的计算结果；计算属性中必须有return&#13;
+  // watch 监听，侧重于监视数据的变化，并做某个操作；watch中一般不需要return；</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">侧重于数据的变化，并做某个操作   而computed侧重于计算的结果必须有return</span>
+</p>
+<p class="relationships">参见: <a href="#3tn5c4dphnp3c9fj16beb5hhal">计算属性的方法&#13;
+            // 前提:当计算属性fn2没有依赖data中的数据时&#13;
+            // 第一次使用计算属性时  会把第一次的结果进行缓存&#13;
+            // 后面再使用几次计算属性,都会去第一次的结果进行查找&#13;
+            // 计算属性使用时 不加()&#13;
+            选项computed:{ str:function(){&#13;
+                    return this.msg+"xyz"&#13;
+                }}与methods用法类似-----必须带有返回值</a>
+</p>
+<h3 class="topic">
+<a name="175fctqni9raa34ff5pntnuh4o">组件</a>
+</h3>
+<h3 class="topic">
+<a name="0lklnpp4jc5olhoenn770d8bsf">全局组件   Vue.component</a>
+</h3>
+<h3 class="topic">
+<a name="7mvcgskag9g5pc714k029q4b4b">组件: 两类(全局+局部) 三步&#13;
+        // 全局组件&#13;
+        // 1. 定义组件 Vue.component(组件名,{选项})&#13;
+        // 组件名建议 abc-xyz&#13;
+        // 2. {template:`标签`,data等}&#13;
+        // template 必须有一个根节点&#13;
+        // data(){return {数据}}&#13;
+        // 3. 在视图中通过组件名使用(自定义标签)&#13;
+        // 在后面newVue所管理的视图中使用</a>
+</h3>
+<div class="notesContainer">
+<p>&lt;div id='app'&gt;</p>
+<p>      
+<span class="s7"> &lt;h-p&gt;&lt;/h-p&gt;--使用</span>
+</p>
+<p>    &lt;/div&gt;</p>
+<p></p>
+<p></p>
+<p>Vue.component('h-p',{</p>
+<p>            template:`&lt;div&gt;</p>
+<p>                &lt;h3&gt;我是组件h+p&lt;/h3&gt;</p>
+<p>                &lt;p&gt;{{num}}&lt;/p&gt;</p>
+<p>            &lt;/div&gt;`,</p>
+<p>            data(){</p>
+<p>                return {</p>
+<p>                    num:100</p>
+<p>                }</p>
+<p>            }</p>
+<p>        });</p>
+</div>
+<h3 class="topic">
+<a name="7ldn9jv9gh4dtqulgeb2aniffp">标签component1. &lt;component&gt; 是Vue提供的；作用是 把 is 指定的 组件名称，渲染到 &lt;component&gt; 内部&#13;
+2. 身上有一个 :is属性&#13;
+</a>
+</h3>
+<div class="notesContainer">
+<p> &lt;button @click="comName='my-home'"&gt;展示Home组件&lt;/button&gt;</p>
+<p>    &lt;button @click="comName='my-movie'"&gt;展示Movie组件&lt;/button&gt;</p>
+<p>    &lt;component :is="comName"&gt;&lt;/component&gt;</p>
+<p>----------------------------------is中放变量    </p>
+</div>
+<h3 class="topic">
+<a name="2umd2sn34jcbe43ttlc5quj86h">局部组件  components</a>
+</h3>
+<p class="relationships">参见: <a href="#6o20ebd9s8acfg23qmdru13apl">   在new Vue({ 都为实例选项   同级显示 })</a>
+</p>
+<h3 class="topic">
+<a name="38hgd9pieuq9milksme1ol22od">components&#13;
+        // 1. 通过选项定义/注册 局部组件&#13;
+        // 2. 选项template或者data等&#13;
+        // 3. 使用组件  在el实例的DOM元素内使用</a>
+</h3>
+<div class="notesContainer">
+<p>components:{</p>
+<p>            'child-a':{</p>
+<p>                template:`&lt;div&gt;我是childa组件--{{num}}&lt;/div&gt;`,</p>
+<p>                data(){</p>
+<p>                    return {</p>
+<p>                        num:100</p>
+<p>                    }</p>
+<p>                }</p>
+<p>            }</p>
+<p>        },</p>
+</div>
+<h3 class="topic">
+<a name="5ohc6lgb4nb5jsgfus9q2jiasa">组件传值</a>
+</h3>
+<h3 class="topic">
+<a name="18uqh89pl9ta0nlpt1s0m7prq0">父子传值</a>
+</h3>
+<h3 class="topic">
+<a name="2hca2gl2vg3jaap041tretf74l">components: {&#13;
+           'child-a': {&#13;
+            //    第三步: 在子组件中使用数据a&#13;
+               template: `&#13;
+                   &lt;div&gt;&#13;
+                       我是child-a组件--{{a}}&#13;
+                   &lt;/div&gt;`,&#13;
+                //    第一步: 声明数据&#13;
+                props:['a']&#13;
+           }&#13;
+        },&#13;
+       &lt;!-- 第二步, 在使用组件时  把父组件数据传值给属性a --&gt;&#13;
+       &lt;child-a :a="a"&gt;&lt;/child-a&gt;&#13;
+    &lt;/div&gt;</a>
+</h3>
+<h3 class="topic">
+<a name="7ncm6d722n7e1dqjr1r29iivqa">第二种方法&#13;
+            &lt;!-- 如果单元格内显示的内容不是字符串(文本),&#13;
+        需要给被显示的内容外层包裹一个template --&gt;&#13;
+&#13;
+            &lt;!--&#13;
+          template内部要用数据 设置slot-scope属性&#13;
+          该属性的值是要用数据create_time的数据源userlist&#13;
+         --&gt;&#13;
+&#13;
+            &lt;!--&#13;
+           slot-scope的值userlist其实就是el-table绑定的数据userlist&#13;
+           userlist.row-&gt;数组中的每个对象</a>
+</h3>
+<div class="notesContainer">
+<p> &lt;template slot-scope="scope"&gt;</p>
+<p>                {{scope.row.create_time | fmtdate}}</p>
+<p>            &lt;/template&gt;</p>
+</div>
+<h3 class="topic">
+<a name="2c3f2lh0gsg7autkh3395fjcmt">子传父   this.$emit触发  $on 绑定</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">需要共同的模块js 导入</span>
+</p>
+<h3 class="topic">
+<a name="159kf19j29l55f8hh74smkkus2">子传父&#13;
+  - 子组件中 触发事件 this.$emit(事件名xxx,值a)&#13;
+  - 在父组件中使用子组件时 绑定自定义事件@xxx="methods里面的方法名fn2"&#13;
+  - 在父组件的methods的fn2形参位置获取到子组件传过来的值a</a>
+</h3>
+<div class="notesContainer">
+<p>import Vue from 'vue'</p>
+<p></p>
+<p>let vm = new Vue()</p>
+<p>    // 外部想要一个vm实例</p>
+<p></p>
+<p>export default vm</p>
+</div>
+<h3 class="topic">
+<a name="2b6jahdhapg1itc5jo9u623euh">axios</a>
+</h3>
+<h3 class="topic">
+<a name="6j6ogbrrbs4i038p3kjmktn7ot">RESTFul接口规则是一种接口API的规则</a>
+</h3>
+<h3 class="topic">
+<a name="7r1cop2pqc4mjtill53p5v59hc">1. post增加 /brands &#13;
+2. delete删除 /brands/1&#13;
+3. put修改 /brands/1 &#13;
+4. get查询/brands&#13;
+</a>
+</h3>
+<h3 class="topic">
+<a name="05d8gqhjs7cmg2htmdu558hc7c">axios&#13;
+           .请求方式(url)&#13;
+          .then((res)=&gt;{获取数据res.data})&#13;
+          .catch((err)=&gt;{})</a>
+</h3>
+<h3 class="topic">
+<a name="3l18eupsm1er24vf9b9edm7avf">axios&#13;
+          .post(url,{要添加的数据})&#13;
+          .then((res)=&gt;{获取数据res.data})&#13;
+          .catch((err)=&gt;{})</a>
+</h3>
+<h3 class="topic">
+<a name="79o55v8ln66avsehr7s9b8jlce">axios&#13;
+          .put(url/id,{修改后的数据})&#13;
+          .then((res)=&gt;{获取数据res.data})&#13;
+          .catch((err)=&gt;{})</a>
+</h3>
+<h3 class="topic">
+<a name="1g7uablej076c0mf56f97ib13o">axios&#13;
+          .delete(url)&#13;
+          .then((res)=&gt;{获取数据res.data})&#13;
+          .catch((err)=&gt;{})</a>
+</h3>
+<h3 class="topic">
+<a name="52g1k48vodfbu8bjih3b6mn0jn">全局配置 axios 请求 API接口时候的 根路径&#13;
+    axios.defaults.baseURL = 'http://www.liulongbin.top:3005'</a>
+</h3>
+<h3 class="topic">
+<a name="6gv59ro9f8hp34hadm8487uen8">拦截器 Interceptors</a>
+</h3>
+<h3 class="topic">
+<a name="0qohlf47r14ell1t81rs18667j">使用 Interceptors 拦截器实现 loading 效果；&#13;
+&#13;
+1. 拦截器分为两部分：请求开始时候的拦截器 和 请求完毕以后的拦截器；&#13;
+2. 在 实例的 created 生命周期函数中，注册 request 和 response 拦截器&#13;
+</a>
+</h3>
+<div class="notesContainer">
+<p>// 生命周期函数之一   表示 data 和 methods 已经初始化完毕了</p>
+<p>  created() {</p>
+<p>    // 只有有请求发起，必然会先触发 request 拦截器</p>
+<p>    axios.interceptors.request.use((config) =&gt; {</p>
+<p>      // Do something before request is sent</p>
+<p>      this.flag = true</p>
+<p>      return config;</p>
+<p>    });</p>
+<p></p>
+<p>    // 注册 response 拦截器</p>
+<p>    axios.interceptors.response.use((response) =&gt; {</p>
+<p>      // Do something with response data</p>
+<p>      this.flag = false</p>
+<p>      return response;</p>
+<p>    });</p>
+<p>  }</p>
+</div>
+<h3 class="topic">
+<a name="307mc8unfs4nbqvdrkjvg1mie3">需要授权的 API ，必须在请求头中使用 Authorization 字段提供 token 令牌&#13;
+      const AUTH_TOKEN = sessionStorage.getItem("token");&#13;
+      this.$http.defaults.headers.common["Authorization"] = AUTH_TOKEN;</a>
+</h3>
+<h3 class="topic">
+<a name="2ad7k5ifmss0bgb73o4cl5t3gf">配置axios</a>
+</h3>
+<h3 class="topic">
+<a name="3a1o27n04uqqi58nnetdbtle41">// 插件模块&#13;
+&#13;
+import axios from 'axios'------引入&#13;
+&#13;
+const MyHttpServer = {}&#13;
+&#13;
+MyHttpServer.install = (Vue) =&gt; {&#13;
+&#13;
+  axios.defaults.baseURL = 'http://localhost:8888/api/private/v1/'&#13;
+&#13;
+  //  添加实例方法&#13;
+  Vue.prototype.$http = axios&#13;
+}&#13;
+&#13;
+export default MyHttpServer------导出</a>
+</h3>
+<h2 class="topic">
+<a name="5qgp7qtlvhn1l2kbqr03c12t83">02day</a>
+</h2>
+<h3 class="topic">
+<a name="1v7c9fl86p007ke6eufbrhitqh">过滤器 filter</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">必须有返回值 return</span>
+</p>
+<h3 class="topic">
+<a name="3olhhg4vo62hmqjkt0d63mbpef">1.传参数 &#13;
+{{count|  过滤器名字  ('穿的参数)}} &#13;
+         2. 串联 &#13;
+ {{被处理的数据count | 过滤器A |过滤器B}}&#13;
+注意: 过滤器A处理的数据是count&#13;
+  过滤器B处理的是过滤器A所返回的结果</a>
+</h3>
+<h3 class="topic">
+<a name="6n74943rb6nlqkk44kpcombs16">new Vue之前设置   全局过滤器 </a>
+</h3>
+<h3 class="topic">
+<a name="21tumavqii8mi6ksbd96ceq2fk">步骤&#13;
+        // 1. 在newVue之前Vue.filter('过滤器名字',function(){})定义过滤器&#13;
+        // 2. 在过滤器的函数中 实现具体的格式处理function(v){}&#13;
+        // v是当前过滤器的调用者 被处理的数据 自带参数&#13;
+        // 3. 在视图中使用过滤器 {{msg  |  过滤器名字}}   msg是插值表达需要解释的数据&#13;
+    语法    Vue.filter('过滤器名字', (v) =&gt; {&#13;
+            // v是自带参数 不需要我们传入&#13;
+            return ---必须带    函数处理程序&#13;
+        })</a>
+</h3>
+<h3 class="topic">
+<a name="0bbsrtdv3g0idap719uc19k1op">与实例选项同级  filters    局部过滤器</a>
+</h3>
+<p class="relationships">参见: <a href="#6o20ebd9s8acfg23qmdru13apl">   在new Vue({ 都为实例选项   同级显示 })</a>
+</p>
+<h3 class="topic">
+<a name="65ig7rtndmvmilrb4g7nohsu30">&#13;
+        // 选项filters&#13;
+        // 不要忘记s&#13;
+        // 1. 通过选项filter定义过滤器 filters:{过滤器名字:function(v){}}&#13;
+        // 2. function(v){return 处理的结果}&#13;
+        // 3. 在视图中{{msg|过滤器名字}}</a>
+</h3>
+<h3 class="topic">
+<a name="2ttp848mtn8dupmb0tk0icu7l0">mounted函数</a>
+</h3>
+<p class="relationships">参见: <a href="#6o20ebd9s8acfg23qmdru13apl">   在new Vue({ 都为实例选项   同级显示 })</a>
+</p>
+<h3 class="topic">
+<a name="6i7kntd6j6f54co33q12r31vhb">在vue中操作dom元素</a>
+</h3>
+<h3 class="topic">
+<a name="0uar3el3d1n599dt75sej4vff5">（必须ref）&#13;
+           1. 给要操作的dom元素设置ref属性值&#13;
+           2. 在选项mounted方法获取要操作的dom元素&#13;
+       &lt;input type="text" ref="abc"&gt;&#13;
+&#13;
+   &#13;
+        mounted() {&#13;
+            console.log(this.$refs)-----this.$refs是个对象object { abc :   input   }</a>
+</h3>
+<h3 class="topic">
+<a name="0s6va0sf0tn32k9c3ga8vpbvrs"> // 全局自定义指令</a>
+</h3>
+<h3 class="topic">
+<a name="3knu99hvg17fbjl1l3ijrjbprm">&#13;
+       &#13;
+        // 1.在newVue之前 Vue.directive('指令名',{inserted(el){}})&#13;
+        // 指令名 不要加v-&#13;
+        // 2. inserted(el){自定义指令的具体功能}&#13;
+        // 使用该指令的dom元素被插入到页面中时 会自动触发inserted&#13;
+        // 3. 在视图中v-指令名 使用自定义指令&#13;
+        // 使用指令时 需要加v-</a>
+</h3>
+<div class="notesContainer">
+<p>Vue.directive('focus',{</p>
+<p>            inserted(el){</p>
+<p>                console.log(el)</p>
+<p>                
+</p>
+<p>                // el:指的是该自定义指令的调用者(dom元素)</p>
+<p>                el.focus()</p>
+<p>            }</p>
+<p>        })</p>
+</div>
+<h3 class="topic">
+<a name="6e8k0ho1hjnom3h3fillqh38jb">局部自定义指令</a>
+</h3>
+<div class="notesContainer">
+<p>// 局部自定义指令</p>
+<p>            // 选项</p>
+<p>          
+<span class="s5"> </span><span class="s4"> directives</span>: {----------必须写</p>
+<p>                focus:{-----------focus为  <span class="s8">v- </span>后面的指令</p>
+<p>                    
+<span class="s4">inserted</span>(el){---------必须这么写</p>
+<p>                        el.focus()--------处理程序</p>
+<p>                    }</p>
+<p>                }</p>
+<p>            },</p>
+</div>
+<h3 class="topic">
+<a name="4srufhf329omin5uo6994ent18">计算属性  computed</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">计算属性中的函数 必须有返回值return</span>
+</p>
+<p class="relationships">参见: <a href="#6o20ebd9s8acfg23qmdru13apl">   在new Vue({ 都为实例选项   同级显示 })</a>
+</p>
+<h3 class="topic">
+<a name="3tn5c4dphnp3c9fj16beb5hhal">计算属性的方法&#13;
+            // 前提:当计算属性fn2没有依赖data中的数据时&#13;
+            // 第一次使用计算属性时  会把第一次的结果进行缓存&#13;
+            // 后面再使用几次计算属性,都会去第一次的结果进行查找&#13;
+            // 计算属性使用时 不加()&#13;
+            选项computed:{ str:function(){&#13;
+                    return this.msg+"xyz"&#13;
+                }}与methods用法类似-----必须带有返回值</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">// 特点: 当被依赖的数据a发生变化时</span>, <span class="label">计算属性b也会自动发生变化   就没有缓存</span>
+</p>
+<p class="relationships">参见: <a href="#3i9bkhpjq4iobjfffg5g47bg71">// 计算属性，侧重于得到最后的计算结果；计算属性中必须有return&#13;
+  // watch 监听，侧重于监视数据的变化，并做某个操作；watch中一般不需要return；</a>
+</p>
+<h2 class="topic">
+<a name="4m3ph1kbsq2ei03anepebhsf4s">promise</a>
+</h2>
+<h3 class="topic">
+<a name="6gp55o4g56vtq1426lgndni7nk">&#13;
+// 1. Promise 表示一个异步操作；&#13;
+// 2. Promise 是一个 构造函数； 如果 const p = new Promise() 就表示创建了一个【形式上】的异步操作；&#13;
+// 3. 如何创建一个【具体的】异步操作呢？  const p = new Promise(function(){ /* 这里可以写具体的异步操作代码 * / })</a>
+</h3>
+<div class="notesContainer">
+<p>// 封装了一个方法，这个方法中，执行了一个读文件的异步操作；</p>
+<p>// 今后，如果有自己封装 promise 的需求，一定要在 Promise 之外，包一个 function 从而让 这个异步操作，可以被按需执行；</p>
+<p>function getFile() {</p>
+<p>  const p = new Promise(function () {</p>
+<p>    //  使用 fs 读取文件</p>
+<p>    fs.readFile('./files/1.txt', 'utf-8', function (err, data) {</p>
+<p>      if (err) return console.log(err)</p>
+<p>      console.log(data)</p>
+<p>    })</p>
+<p>  })</p>
+<p>}</p>
+<p></p>
+<p>getFile()</p>
+</div>
+<h3 class="topic">
+<a name="7u41c3fn836pu0im641isqmjon">推荐有此方法</a>
+</h3>
+<div class="notesContainer">
+<p>function getFile(fpath) {</p>
+<p>
+<span class="s6"> </span><span class="s9"> // p 是一个 Promise 实例对象，p.__proto__上有一个 .then 方法； 这个 .then 方法的作用，就是为 异步操作，预先执行 成功 回调函数的；</span>
+</p>
+<p>  const p = new Promise(function (s<span class="s3">uccessCbk</span>, <span class="s3">errorCbk</span>) {</p>
+<p>    //  使用 fs 读取文件</p>
+<p>    fs.readFile(fpath, 'utf-8', function (err, data) {</p>
+<p>      if (err) return <span class="s3">errorCbk</span>(err)</p>
+<p>      
+<span class="s3">successCbk</span>(data)</p>
+<p>    })</p>
+<p>  })</p>
+<p></p>
+<p>  // return p 的目的，是为了外界能够通过 Promise 实例的 .then 方法，为我们指定成功的回调函数；</p>
+<p>  return p</p>
+<p>}</p>
+<p>// 注意：通过 .then 方法指定的成功的回调函数，被传递到了  new Promise(function(successCbk, errorCbk){ })</p>
+<p>// Promise实例.then(成功的回调, 失败的回调)   其中，成功的回调必须要传递，失败的回调是可选的参数</p>
+<p>---------调用上面的函数</p>
+<p>
+<span class="s2">getFile('./files/11.txt').then(</span><span class="s3">function (data) { </span>
+</p>
+<p>
+<span class="s3"> console.log('成功的结果：' + data)</span>
+</p>
+<p>
+<span class="s3"> }</span><span class="s2">,       </span>
+</p>
+<p>
+<span class="s2"></span>
+</p>
+<p>
+<span class="s2">   </span><span class="s2"> </span><span class="s3">function (err) {               </span>
+</p>
+<p>
+<span class="s3">   console.log('失败的回调被执行了！' + err.message)</span>
+</p>
+<p>
+<span class="s3"> }</span><span class="s2">)</span><span class="s3"></span>
+</p>
+<p></p>
+</div>
+<h3 class="topic">
+<a name="2ignsoaf53ea2hprjtfnvjbemk">async 和 await 简化 Promise 的调用</a>
+</h3>
+<h3 class="topic">
+<a name="2teb2ivcsevcc9adt44ivu9npr">1. async 是一个关键字，只能用来修饰 方法; 被 async 修饰的方法，叫做异步方法；&#13;
+// 2. await 必须配合 async 进行使用；也就是说，await 只能用到 被 async 修饰的方法中；&#13;
+// 3. await 关键字，是来优化 Promise 调用的；也就是说，await 只能用在 Promise 实例之前；</a>
+</h3>
+<div class="notesContainer">
+<p>const fs = require('fs')</p>
+<p></p>
+<p>// 封装读文件的 promise 方法</p>
+<p>function getFile(fpath) {</p>
+<p>  const p = new Promise(function (resolve, reject) {</p>
+<p>    fs.readFile(fpath, 'utf-8', function (err, dataStr) {</p>
+<p>      // 如果读取文件失败，则调用 reject 把 失败的结果，交给用户去处理</p>
+<p>      if (err) return reject(err)</p>
+<p>      // 如果没有失败，则调用成功的回调函数。把结果传递出去；</p>
+<p>      resolve(dataStr)</p>
+<p>    })</p>
+<p>  })</p>
+<p></p>
+<p>  return p</p>
+<p>}</p>
+<p>async function test() {</p>
+<p>  // await 只能修饰 Promise 实例</p>
+<p>  const result = await getFile('./files/1.txt')</p>
+<p>  console.log(result)</p>
+<p></p>
+<p>  const result2 = await getFile('./files/2.txt')</p>
+<p>  console.log(result2)</p>
+<p></p>
+<p>  const result3 = await getFile('./files/3.txt')</p>
+<p>  console.log(result3)</p>
+<p></p>
+<p>}</p>
+</div>
+<h2 class="topic">
+<a name="6o20ebd9s8acfg23qmdru13apl">   在new Vue({ 都为实例选项   同级显示 })</a>
+</h2>
+<p class="relationships">参见: <a href="#0bbsrtdv3g0idap719uc19k1op">与实例选项同级  filters    局部过滤器</a>, <a href="#6a1va14u35lqa16hlhhaiivino">vue实例选项：el</a>, <a href="#6053te9v5uihjkvtk8thaa90mt">vue实例选项：data</a>, <a href="#445l1qn2d67uq0jp6s3k0dpnu9">vue实例选项：methods	</a>, <a href="#4srufhf329omin5uo6994ent18">计算属性  computed</a>, <a href="#1kejt36leadqv6phqnm7v36biv">侦听器  watch (都是实例选项)</a>, <a href="#2ttp848mtn8dupmb0tk0icu7l0">mounted函数</a>, <a href="#2umd2sn34jcbe43ttlc5quj86h">局部组件  components</a>
+</p>
+<h2 class="topic">
+<a name="41inhs2p11dhai23erme2llf31">模块化</a>
+</h2>
+<h3 class="topic">
+<a name="1138e2gsu32j2icaa2oiqvn9j3">// 在 node.js 中 使用 module.exports = {} 向外暴露成员&#13;
+// 使用 const **  = require('模块标识符')  来导入其它模块&#13;
+&#13;
+// -------------------&#13;
+&#13;
+// ES6 中，通过 export default {} 把 一个模块中的成员暴露出去&#13;
+// ES6 中，通过 import ** from '模块标识符' 来导入其它的模块&#13;
+&#13;
+// 注意：在每一个 .js 模块中，有且只能使用唯一一次 export default&#13;
+// 如果一个模块中，没有使用 export default {} 向外暴露任何成员，则，只会单纯的执行这个模块中的代码，外界并不会接收到任何有效的返回值；</a>
+</h3>
+<div class="notesContainer">
+<p>// 使用 export default {} 暴露的成员，需要用 import 接收名称 from '标识符' 来接收；</p>
+<p></p>
+<p></p>
+<p>// 使用 ES6 中的 export 语法，也能够直接向外暴露一些成员</p>
+<p>// <span class="s6">使用 export 向外暴露的成员，需要使用 import {} from '标识符' 来接收</span>
+</p>
+<p>
+<span class="s6">// import 时候提供的 {} 叫做 【按需导出】----如果要为 { } 按需导入的成员，起一个别名，需要使用 as 关键字【一定要和 解构赋值 区分开】</span>
+</p>
+<p>
+<span class="s2">import obj, { c, d as username } from './js/m3.js'</span>
+</p>
+<p>//<span class="s3"> export 向外暴露的成员，必须严格按照导入的名称，来使用 {} 进行接收； export可以使用多次</span>
+</p>
+<p>
+<span class="s2">export var c = 20</span>
+</p>
+<p>
+<span class="s2">export var d = 'zs'</span>
+</p>
+</div>
+<h2 class="topic">
+<a name="7ahl6e56u2p4p8jnalvjr17vbb">vue-cli</a>
+</h2>
+<p class="labelsAndMarkers">
+<span class="label">前提是node8.9+版本</span>
+</p>
+<h3 class="topic">
+<a name="6i9aqk3gk7gilm0fr4g1pgtv5r">生成标准的vue项目的目录 辅助项目开发</a>
+</h3>
+<h3 class="topic">
+<a name="371f3gseh3tdeut237448u0qq8">1. npm i -g @vue/cli -&gt; 全局安装3版本vue-cli&#13;
+2. vue -V &#13;
+3. 目的: 希望在3版环境下 执行2版的指令 需要安装桥接工具&#13;
+4. npm i -g @vue/cli-init&#13;
+5. 使用2版的vue指令去创建项目了!&#13;
+6. vue init 项目模板 项目名  -&gt; vue init webpack heroes53&#13;
+</a>
+</h3>
+<h3 class="topic">
+<a name="316p5m5r0gdo9v73hjpqe1j3mb">vue-cli-创建项目&#13;
+&#13;
+1. 来到希望项目所在的文件夹 -&gt; 04-代码&#13;
+2. vue init webpack  heroes53&#13;
+   项目名 不要有中文 webpack vue等&#13;
+3. 会有一些提示 项目名/项目描述/作者/认证等  -&gt; 一直按回车&#13;
+4. cd heroes53&#13;
+5. npm i&#13;
+6. npm run dev -&gt; 把项目在自带的服务器下打开(自动打开浏览器)-&gt;启动开发模式&#13;
+</a>
+</h3>
+<div class="notesContainer">
+<p>src文件夹 是我们需要关注</p>
+<p></p>
+<p>main.js 程序入口文件 (导包)</p>
+<p></p>
+<p>App.vue 根组件 所有其他组件都要在App.vue中去展示</p>
+<p></p>
+<p>.vue -&gt; template/script/style</p>
+<p></p>
+<p>assets/ 保存静态资源(css png ttf 字体图标等)</p>
+<p></p>
+<p>webpack.config.js webpack配置文件</p>
+<p></p>
+</div>
+<h2 class="topic">
+<a name="4fj9jk7c0likp3tj4c7h4cujrm">自由主题</a>
+</h2>
+</body>
+</html>
