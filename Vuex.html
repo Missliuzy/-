@@ -1,0 +1,309 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<title>vuex  </title>
+<style type="text/css">span.s1 {background-color: #FF9D96; color: #000000}span.s2 {background-color: #FFA500; color: #000000}span.s3 {background-color: #FFA500; color: #FFA500}span.s4 {background-color: #FFFF00; color: #000000}</style>
+</head>
+<body>
+<h1 align="center" class="root">
+<a name="5end934lscbas2k1bftv1afjes">vuex  </a>
+</h1>
+<div align="center" class="globalOverview">
+<img src="vuex  _files/images/vuex  .jpg"></div>
+<div class="notesContainer">
+<p>vue项目的数据管理很复杂(多个组件公用一份数据),建议使用vuex</p>
+</div>
+<h2 class="topic">
+<a name="0bfi2h43h1esgnh3k8jek0faju">actions</a>
+</h2>
+<p class="labelsAndMarkers">
+<span class="label">获取数据</span>
+</p>
+<div class="overview">
+<img src="vuex  _files/images/actions.jpg"></div>
+<h3 class="topic">
+<a name="3vtomoreqia9g0a2qlivdnkrgd">和后台发送数据 交互  造成数据修改  是异步  </a>
+</h3>
+<h2 class="topic">
+<a name="2ipgk38vrgo0mho9vsifaqjr40">mutations</a>
+</h2>
+<p class="labelsAndMarkers">
+<span class="label">修改数据</span>
+</p>
+<div class="overview">
+<img src="vuex  _files/images/mutations.jpg"></div>
+<h3 class="topic">
+<a name="4v2gusu0gopm3100n99cdklu49">修改数据，</a>
+</h3>
+<h2 class="topic">
+<a name="1gagiuqkj1b1hsrjuc1orjiiou">state</a>
+</h2>
+<p class="labelsAndMarkers">
+<span class="label">声明数据</span>
+</p>
+<h2 class="topic">
+<a name="2rpbpdhnijuljcqaq4glnje0sj">vuex的使用</a>
+</h2>
+<div class="overview">
+<img src="vuex  _files/images/vuex%E7%9A%84%E4%BD%BF%E7%94%A8.jpg"></div>
+<div class="notesContainer">
+<p>1. npm i vuex</p>
+<p>2. main.js import Vuex from 'vuex'</p>
+<p>3. main.js Vue.use(Vuex)</p>
+<p>4. let store = new Vuex.Store({state:{count:100}})</p>
+<p>5. new Vue({store})挂载仓库</p>
+<p>6. 在任何组件都可以通过计算属性去使用count数据 this.$store.state.count</p>
+</div>
+<h3 class="topic">
+<a name="2dhd6plh44cjbo4bmb7ovu12lr">import Vuex from 'vuex'---导入&#13;
+Vue.use(Vuex)----使用&#13;
+&#13;
+const store = new Vuex.Store({ })&#13;
+new Vue({&#13;
+    el: '#app',&#13;
+    store, ------挂载&#13;
+    render: h =&gt; h(App)&#13;
+})&#13;
+computed: {&#13;
+  //   count() {&#13;
+  //     return this.$store.state.count;&#13;
+  //   }&#13;
+  // }</a>
+</h3>
+<h3 class="topic">
+<a name="4oqcmtgebaf53b188hi6v59nbd">state</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">在计算属性使用</span>
+</p>
+<div class="overview">
+<img src="vuex  _files/images/state.jpg"></div>
+<h3 class="topic">
+<a name="3ihjd3ivjol48u5g0klu09eiml">mapstate</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">在计算属性使用</span>
+</p>
+<div class="overview">
+<img src="vuex  _files/images/mapstate.jpg"></div>
+<div class="notesContainer">
+<p>1.</p>
+<p>  
+<span class="s1">computed: {</span>
+</p>
+<p>
+<span class="s1">    count() {</span>
+</p>
+<p>
+<span class="s1">      return this.$store.state.count;</span>
+</p>
+<p>
+<span class="s1">    }</span>
+</p>
+<p>
+<span class="s1">  }</span>
+</p>
+<p>  2. mapState</p>
+<p> 
+<span class="s2"> computed: mapState({</span>
+</p>
+<p>
+<span class="s2">  2.1</span>
+</p>
+<p>
+<span class="s2">  count: state =&gt; state.count</span>
+</p>
+<p>
+<span class="s2">  count(state){return state.count}</span>
+</p>
+<p>
+<span class="s2">  2.2</span>
+</p>
+<p>
+<span class="s2">  countnew</span><span class="s3">: "count"</span>
+</p>
+<p>  2.3</p>
+<p>  
+<span class="s1">count(state) {</span>
+</p>
+<p>
+<span class="s1">    return state.count + this.msg;</span>
+</p>
+<p>
+<span class="s1">  }</span>
+</p>
+<p>  })</p>
+<p>  3. mapState([])</p>
+<p>  computed:{count(){return this.$store.state.count}}</p>
+<p> 
+<span class="s2"> computed: mapState(["count"])</span>
+</p>
+<p>  4. ...mapState({}) 或 ...mapState([])</p>
+<p> 
+<span class="s4"> computed: {</span>
+</p>
+<p>  count(){return this.$store.state.count}</p>
+<p>
+<span class="s2">  ...mapState(["count", "a"]),  -------------重要</span><span class="s2"></span>
+</p>
+<p>
+<span class="s2">  ...mapState({ countnew: "count" }),--------------重要</span>
+</p>
+<p> 
+<span class="s1"> countnum(state) {</span>
+</p>
+<p>
+<span class="s1">    return state.count;</span>
+</p>
+<p>
+<span class="s1">  }</span>
+</p>
+<p>
+<span class="s4">  }</span>
+</p>
+</div>
+<h3 class="topic">
+<a name="254fti8i41dadd904t7tnao50i">...mapState({}) 或 ...mapState([])&#13;
+  // computed: {&#13;
+  // count(){return this.$store.state.count}&#13;
+  // ...mapState(["count", "a"]),&#13;
+  // ...mapState({ countnew: "count" }),&#13;
+  // countnum(state) {&#13;
+  //   return state.count;&#13;
+  // }&#13;
+  // }</a>
+</h3>
+<h3 class="topic">
+<a name="32fp9k01h2ino4m35bbp3qoaun">如果state数据A依赖了仓库数据B     getter </a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">必须有返回值</span>
+</p>
+<div class="overview">
+<img src="vuex  _files/images/%E5%A6%82%E6%9E%9Cstate%E6%95%B0%E6%8D%AEA%E4%BE%9D%E8%B5%96%E4%BA%86%E4%BB%93%E5%BA%93%E6%95%B0%E6%8D%AEB     getter .jpg"></div>
+<div class="notesContainer">
+<p> getters: {</p>
+<p>        anew(<span class="s2">state)</span> { ----------state指向state</p>
+<p>            
+<span class="s2">return </span>state.a + 100  -----------------必须有return</p>
+<p>        }</p>
+<p>    },---------------------写在main。js中</p>
+<p></p>
+<p></p>
+<p></p>
+<p>----------------------------------------</p>
+<p>  1.                 写在vue组件中</p>
+<p>  
+<span class="s1">computed: { </span><span class="s1"></span>
+</p>
+<p>
+<span class="s1">    bnew() {</span>
+</p>
+<p>
+<span class="s1">      return this.$store.getters.anew; -----------第一种用法</span><span class="s1"></span>
+</p>
+<p>
+<span class="s1">    }</span>
+</p>
+<p>
+<span class="s1">  } </span>
+</p>
+<p>  2. mapGetters</p>
+<p>  
+<span class="s2">computed: {</span>
+</p>
+<p>  anew(){return this.$store.getters.anew;}</p>
+<p>  
+<span class="s2">...mapGetters(["anew"]),-------------第二种用法</span><span class="s2"></span>
+</p>
+<p>
+<span class="s2">  ...mapGetters({ bnew: "anew" })------------第三种</span>
+</p>
+<p>
+<span class="s2">  }</span>
+</p>
+</div>
+<h3 class="topic">
+<a name="5g8j9k6v4si7kuqvrt2839iqp1">mapGetters</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">在计算属性使用</span>
+</p>
+<div class="overview">
+<img src="vuex  _files/images/mapGetters.jpg"></div>
+<h3 class="topic">
+<a name="7pdedqnr75hd17q06e472l9kgo">computed:{...mapGetters(['anew'])}</a>
+</h3>
+<h3 class="topic">
+<a name="4sk4k64kojgn3daivfnckk07ns">mutations</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">在methods使用</span>
+</p>
+<div class="overview">
+<img src="vuex  _files/images/mutations 2.jpg"></div>
+<div class="notesContainer">
+<p>methods：{</p>
+<p>  childfn1() {</p>
+<p>    
+<span class="s1">// 调用store中的mutations里fn1的方法</span>
+</p>
+<p>    this.$store.commit("fn1"); </p>
+<p>    }</p>
+<p>}</p>
+</div>
+<h3 class="topic">
+<a name="43cnrse82aam3j0hr0nhe3e8ir">必须是同步函数操作数据</a>
+</h3>
+<h3 class="topic">
+<a name="1vbhgi96tit1g0si0cu221vg44">mapmutations</a>
+</h3>
+<div class="notesContainer">
+<p>methods:{</p>
+<p>  ...mapMutations({</p>
+<p>      add: 'increment' </p>
+<p>    })</p>
+<p>}</p>
+</div>
+<h3 class="topic">
+<a name="0atr3cmtev285bjagijuh7vo0e">异步 actions</a>
+</h3>
+<p class="labelsAndMarkers">
+<span class="label">在methods使用</span>
+</p>
+<div class="notesContainer">
+<p>methods:{</p>
+<p>   childfn5() {</p>
+<p>      this.$store.dispatch("<span class="s2">fnac1</span>");-------调用actions的fnac1的方法</p>
+<p>    }</p>
+<p></p>
+<p></p>
+<p></p>
+<p> ...mapActions({</p>
+<p>      add: 'increment' <span class="s1">等同于</span> `this.$store.dispatch('increment')`</p>
+<p>    })</p>
+<p></p>
+<p></p>
+<p>}</p>
+<p>---------------------------------------------------------------上是在vue组件中   下在js  vuex的实例中</p>
+<p>actions: {</p>
+<p>       
+<span class="s1"> // context相当于store</span>
+</p>
+<p>        fnac1(context) {</p>
+<p>            setTimeout(() =&gt; {</p>
+<p>                
+<span class="s1">// commit('mutation中修改数据的方法fn5')</span>
+</p>
+<p>                context.commit('fn5')  </p>
+<p>            }, 1000);</p>
+<p>        }</p>
+<p>    }</p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</body>
+</html>
